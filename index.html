@@ -352,18 +352,142 @@
             color: #e6d9ff;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
             }
 
             nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                margin-top: 1rem;
+                background: rgba(107, 76, 154, 0.95);
+                border-radius: 10px;
+                padding: 1rem 0;
             }
 
-            .skills-grid, .projects-grid {
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                display: block;
+                margin: 0.5rem auto;
+                max-width: 250px;
+            }
+
+            section {
+                padding: 1rem;
+                margin: 2rem auto;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                padding: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .skills-grid, .projects-grid, .cert-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .skill-card, .project-card {
+                padding: 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-tags {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -372,7 +496,8 @@
     <header>
         <nav>
             <div class="logo">QA Portfolio</div>
-            <ul>
+            <button class="mobile-menu-btn" id="menuToggle">☰</button>
+            <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -635,6 +760,24 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -648,6 +791,7 @@
             });
         });
 
+        // Contact form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon to discuss your testing needs.');
