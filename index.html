@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Engineer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f0ff 0%, #e6d9ff 100%);
+            color: #4a3668;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #9b7bc7 0%, #c8b4e8 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #6b4c9a;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #7d5ba6;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #7d5ba6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #9b7bc7 0%, #b998dd 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(155, 123, 199, 0.4);
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(155, 123, 199, 0.6);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #6b4c9a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(155, 123, 199, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #9b7bc7 0%, #b998dd 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(155, 123, 199, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(155, 123, 199, 0.2);
+            transition: all 0.3s;
+            border-left: 4px solid #9b7bc7;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(155, 123, 199, 0.3);
+        }
+
+        .skill-card h3 {
+            color: #6b4c9a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #6b4c9a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li:before {
+            content: "✓";
+            color: #9b7bc7;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(155, 123, 199, 0.2);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(155, 123, 199, 0.3);
+        }
+
+        .project-header {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #d8c7f0 0%, #c8b4e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #6b4c9a;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #e6d9ff;
+            color: #6b4c9a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .certifications {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(155, 123, 199, 0.2);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cert-item {
+            padding: 1.5rem;
+            background: #f5f0ff;
+            border-radius: 10px;
+            border-left: 4px solid #9b7bc7;
+        }
+
+        .cert-item h4 {
+            color: #6b4c9a;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(155, 123, 199, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #6b4c9a;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e6d9ff;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #9b7bc7;
+            box-shadow: 0 0 0 3px rgba(155, 123, 199, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #6b4c9a 0%, #9b7bc7 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #e6d9ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">QA Portfolio</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Quality Assurance Engineer</h1>
+        <p class="subtitle">Ensuring Excellence Through Rigorous Testing</p>
+        <p>Dedicated to delivering flawless software experiences through comprehensive testing strategies, automation, and meticulous attention to detail.</p>
+        <div>
+            <a href="#contact" class="btn">Hire Me</a>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I am a passionate QA Engineer with extensive experience in manual and automated testing across web, mobile, and API platforms. My mission is to ensure software quality through comprehensive test planning, execution, and continuous improvement.</p>
+            <p style="margin-top: 1rem;">With a keen eye for detail and a systematic approach to problem-solving, I specialize in identifying bugs before they reach production, implementing robust testing frameworks, and collaborating with development teams to deliver high-quality products.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div>Test Cases Written</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div>Projects Tested</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1000+</div>
+                <div>Bugs Found</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div>Quality Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><span class="skill-icon">🔍</span> Testing Types</h3>
+                <ul class="skill-list">
+                    <li>Functional Testing</li>
+                    <li>Regression Testing</li>
+                    <li>Integration Testing</li>
+                    <li>Performance Testing</li>
+                    <li>UAT Testing</li>
+                    <li>Smoke & Sanity Testing</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><span class="skill-icon">🤖</span> Automation Tools</h3>
+                <ul class="skill-list">
+                    <li>Selenium WebDriver</li>
+                    <li>Cypress</li>
+                    <li>JUnit / TestNG</li>
+                    <li>Appium (Mobile)</li>
+                    <li>Rest Assured</li>
+                    <li>Postman</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><span class="skill-icon">💻</span> Programming</h3>
+                <ul class="skill-list">
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>HTML/CSS</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><span class="skill-icon">🛠️</span> Tools & Technologies</h3>
+                <ul class="skill-list">
+                    <li>JIRA / Bugzilla</li>
+                    <li>Git / GitHub</li>
+                    <li>Jenkins / CI/CD</li>
+                    <li>TestRail / Zephyr</li>
+                    <li>JMeter / LoadRunner</li>
+                    <li>Docker</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><span class="skill-icon">📱</span> Testing Domains</h3>
+                <ul class="skill-list">
+                    <li>Web Applications</li>
+                    <li>Mobile Apps (iOS/Android)</li>
+                    <li>REST/SOAP APIs</li>
+                    <li>Microservices</li>
+                    <li>Database Testing</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3><span class="skill-icon">📊</span> Methodologies</h3>
+                <ul class="skill-list">
+                    <li>Agile/Scrum</li>
+                    <li>Waterfall</li>
+                    <li>DevOps Practices</li>
+                    <li>BDD/TDD</li>
+                    <li>Continuous Testing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Testing Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">🛒</div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform Testing</h3>
+                    <p>Comprehensive testing of online shopping platform including payment gateway, inventory management, and user workflows.</p>
+                    <div class="project-tags">
+                        <span class="tag">Selenium</span>
+                        <span class="tag">API Testing</span>
+                        <span class="tag">Regression</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">🏦</div>
+                <div class="project-content">
+                    <h3>Banking Application QA</h3>
+                    <p>Security and functional testing of banking app with focus on transaction validation and data integrity.</p>
+                    <div class="project-tags">
+                        <span class="tag">Security Testing</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Performance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">📱</div>
+                <div class="project-content">
+                    <h3>Mobile App Automation</h3>
+                    <p>Automated testing framework for cross-platform mobile application using Appium and TestNG.</p>
+                    <div class="project-tags">
+                        <span class="tag">Appium</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">🏥</div>
+                <div class="project-content">
+                    <h3>Healthcare Management System</h3>
+                    <p>End-to-end testing of patient management system ensuring HIPAA compliance and data accuracy.</p>
+                    <div class="project-tags">
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Integration</span>
+                        <span class="tag">UAT</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">🔗</div>
+                <div class="project-content">
+                    <h3>API Testing Framework</h3>
+                    <p>Built comprehensive REST API testing suite with automated validation of endpoints and data contracts.</p>
+                    <div class="project-tags">
+                        <span class="tag">Postman</span>
+                        <span class="tag">REST Assured</span>
+                        <span class="tag">Newman</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-header">⚡</div>
+                <div class="project-content">
+                    <h3>Performance Testing Suite</h3>
+                    <p>Load and stress testing of high-traffic web application to ensure optimal performance under peak loads.</p>
+                    <div class="project-tags">
+                        <span class="tag">JMeter</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">Load Testing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certifications">
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h4>ISTQB Certified Tester</h4>
+                    <p>Foundation Level - International Software Testing Qualifications Board</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Certified Selenium Professional</h4>
+                    <p>Advanced automation testing certification</p>
+                </div>
+                <div class="cert-item">
+                    <h4>Agile Testing Certification</h4>
+                    <p>Certified in Agile and Scrum methodologies</p>
+                </div>
+                <div class="cert-item">
+                    <h4>API Testing Specialist</h4>
+                    <p>REST API testing and automation expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Project inquiry, collaboration, etc." required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell me about your testing needs..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 QA Engineer Portfolio. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" title="LinkedIn">💼</a>
+            <a href="#" title="GitHub">💻</a>
+            <a href="#" title="Email">✉️</a>
+            <a href="#" title="Twitter">🐦</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon to discuss your testing needs.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
