@@ -459,7 +459,7 @@
   /* Skills section */
   .skills-section { background: var(--bg2); padding: 6rem 0; }
   .skills-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
-  .skills-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; }
+  .skills-cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; }
   .skill-cat {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -577,7 +577,7 @@
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
-    .skills-cats { grid-template-columns: 1fr 1fr; }
+    .skills-cats { grid-template-columns: repeat(2, 1fr); }
     .contact-card { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; }
     .exp-item::before { display: none; }
@@ -614,11 +614,12 @@
     <p class="hero-title">Quality Assurance Engineer</p>
     <p class="hero-desc">
       Detail-oriented QA professional specialising in <strong>manual & automation testing</strong>,
-      fintech platform validation, and building quality gates that ship reliable software at scale.
+      fintech platform validation, AI chatbot testing, and voice AI support systems. Expert in building
+      quality gates that ship reliable, intelligent software at scale.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
+      <a href="Sahil_Maharjan_Resume.pdf" class="btn-outline" download>Download Resume</a>
     </div>
   </div>
   <div class="hero-right">
@@ -667,13 +668,15 @@
       <p>
         With hands-on experience across <strong>Black Box, White Box, and Gray Box testing</strong>,
         I've validated everything from payment gateways and email verification SaaS platforms to
-        CRM systems and high-traffic job portals. I thrive in Agile environments where fast feedback
-        cycles and cross-functional collaboration drive quality into every sprint.
+        AI-powered chatbots, voice assistant applications, and CRM systems. I specialize in testing
+        conversational AI interfaces, validating natural language processing accuracy, and ensuring
+        voice AI quality across diverse use cases.
       </p>
       <p>
         Beyond functional testing, I build <strong>automation frameworks with Playwright and Selenium</strong>,
-        run API test suites in Postman, and conduct load testing with Apache JMeter — translating manual
-        coverage into reliable, repeatable pipelines that keep release cycles short.
+        run API test suites in Postman, conduct load testing with Apache JMeter, and design comprehensive
+        test strategies for AI/ML systems — translating manual coverage into reliable, repeatable pipelines
+        that keep release cycles short and quality high.
       </p>
     </div>
     <div>
@@ -774,9 +777,45 @@
         <span class="project-link blue">Fintech Project ↗</span>
       </div>
 
-      <!-- SanitizeEmail -->
+      <!-- AI Chatbot Testing -->
       <div class="project-card fade-in">
         <div class="project-num">04</div>
+        <span class="project-tag tag-fintech">AI · Chatbot Testing</span>
+        <h3 class="project-title">AI Chatbot QA Platform</h3>
+        <p class="project-desc">
+          Comprehensive testing of an AI-powered customer support chatbot, validating conversational flows, intent recognition accuracy, entity extraction, and fallback mechanisms. Tested natural language processing edge cases and response quality across multiple languages.
+        </p>
+        <div class="project-tech">
+          <span class="tech-pill">NLP Testing</span>
+          <span class="tech-pill">Conversation Flows</span>
+          <span class="tech-pill">Intent Mapping</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">API Testing</span>
+        </div>
+        <span class="project-link blue">AI Project ↗</span>
+      </div>
+
+      <!-- Voice AI Testing -->
+      <div class="project-card fade-in">
+        <div class="project-num">05</div>
+        <span class="project-tag tag-fintech">AI · Voice Support</span>
+        <h3 class="project-title">Voice AI Support System</h3>
+        <p class="project-desc">
+          End-to-end testing of a voice-enabled customer support AI system. Validated speech recognition accuracy, voice command understanding, and response generation quality. Tested fallback to live agent transitions, accent handling, and background noise resilience across devices.
+        </p>
+        <div class="project-tech">
+          <span class="tech-pill">Voice Recognition</span>
+          <span class="tech-pill">Audio Testing</span>
+          <span class="tech-pill">NLP</span>
+          <span class="tech-pill">Accessibility</span>
+          <span class="tech-pill">Postman</span>
+        </div>
+        <span class="project-link blue">AI Project ↗</span>
+      </div>
+
+      <!-- SanitizeEmail -->
+      <div class="project-card fade-in">
+        <div class="project-num">06</div>
         <span class="project-tag tag-qa">SaaS · Email</span>
         <h3 class="project-title">SanitizeEmail</h3>
         <p class="project-desc">
@@ -795,7 +834,7 @@
 
       <!-- Vrit Jobs -->
       <div class="project-card fade-in">
-        <div class="project-num">05</div>
+        <div class="project-num">07</div>
         <span class="project-tag tag-perf">Job Portal · Performance</span>
         <h3 class="project-title">VritJobs Portal</h3>
         <p class="project-desc">
@@ -814,7 +853,7 @@
 
       <!-- SkillShikshya -->
       <div class="project-card fade-in">
-        <div class="project-num">06</div>
+        <div class="project-num">08</div>
         <span class="project-tag tag-qa">EdTech · CRM</span>
         <h3 class="project-title">Skillshikshya Platform</h3>
         <p class="project-desc">
@@ -844,7 +883,7 @@
       <div class="exp-date">Nov 2024 — Present</div>
       <div class="exp-content">
         <div class="exp-role">Quality Assurance Engineer</div>
-        <div class="exp-company">Mantra Ideas · Thasikhel</div>
+        <div class="exp-company">Mantr Ideas · Thasikhel</div>
         <ul class="exp-list">
           <li>Manual and automated testing to ensure high-quality, reliable software applications.</li>
           <li>Black Box, White Box, and Gray Box testing to validate functionality, logic, and behaviour.</li>
@@ -901,6 +940,24 @@
           <span class="skill-tag">BVA</span>
           <span class="skill-tag">Black Box</span>
           <span class="skill-tag">White Box</span>
+          <span class="skill-tag">Security</span>
+          <span class="skill-tag">Usability</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">AI & Voice Testing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Chatbot Testing</span>
+          <span class="skill-tag">Voice AI QA</span>
+          <span class="skill-tag">NLP Testing</span>
+          <span class="skill-tag">Conversational UX</span>
+          <span class="skill-tag">Response Validation</span>
+          <span class="skill-tag">AI Model Output</span>
+          <span class="skill-tag">Voice Recognition</span>
+          <span class="skill-tag">Intent Mapping</span>
+          <span class="skill-tag">Context Handling</span>
+          <span class="skill-tag">AI Bias Testing</span>
+          <span class="skill-tag">Fallback Flows</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -913,6 +970,7 @@
           <span class="skill-tag">Postman</span>
           <span class="skill-tag">JIRA</span>
           <span class="skill-tag">TestNG</span>
+          <span class="skill-tag">API Testing</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -931,13 +989,16 @@
         <div class="skill-cat-title">Domains</div>
         <div class="skill-tags">
           <span class="skill-tag">Fintech</span>
+          <span class="skill-tag">AI/ML Testing</span>
+          <span class="skill-tag">Chatbots</span>
+          <span class="skill-tag">Voice AI</span>
           <span class="skill-tag">SaaS</span>
           <span class="skill-tag">E-commerce</span>
           <span class="skill-tag">EdTech</span>
           <span class="skill-tag">CRM</span>
           <span class="skill-tag">REST API</span>
           <span class="skill-tag">Payment</span>
-          <span class="skill-tag">Security</span>
+          <span class="skill-tag">Mobile</span>
         </div>
       </div>
     </div>
@@ -990,7 +1051,7 @@
 
 <footer>
   <div class="footer-copy">© 2025 <span class="footer-accent">Sahil Maharjan</span> — QA Engineer, Kathmandu</div>
-  
+  <div class="footer-copy" style="font-size:0.65rem">Built with precision. Tested with care.</div>
 </footer>
 
 <script>
